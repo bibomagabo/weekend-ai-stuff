@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    oneLiner: string;
+    tags: string[];
+    easeOfUse: string;
+    access: string;
+    toolLink: string;
+    whatItDoes: string;
+    whoItsFor: string;
+    whatYouNeed: string;
+    accessBreakdown: string;
+    tryThisFirst: string;
+    dateAdded: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+function easeClass(ease: string) {
+  if (ease === 'Beginner-friendly') return 'ease-beginner';
+  if (ease === 'Some setup needed') return 'ease-moderate';
+  return 'ease-advanced';
+}
+---
+<BaseLayout title={frontmatter.title} description={frontmatter.oneLiner}>
+  <article class="post">
+    <a href="/toolkit/" class="back-link">&larr; All Tools</a>
+
+    <header class="tool-header">
+      <h1>{frontmatter.title}</h1>
+      <p class="tool-one-liner">{frontmatter.oneLiner}</p>
+      <div class="tool-meta">
+        {frontmatter.tags.map((tag) => (
+          <span class="tag tag-category">{tag}</span>
+        ))}
+        <span class={`tag ${easeClass(frontmatter.easeOfUse)}`}>{frontmatter.easeOfUse}</span>
+        <span class="tag">{frontmatter.access}</span>
+      </div>
+    </header>
+
+    <div class="tool-body">
+
+      <section class="tool-section">
+        <h2 class="tool-section-title">What it does</h2>
+        <p>{frontmatter.whatItDoes}</p>
+      </section>
+
+      <div class="prose tool-content">
+        <slot />
+      </div>
+
+      <section class="tool-section">
+        <h2 class="tool-section-title">Who it's for</h2>
+        <p>{frontmatter.whoItsFor}</p>
+      </section>
+
+      <section class="tool-section">
+        <h2 class="tool-section-title">What you need</h2>
+        <p>{frontmatter.whatYouNeed}</p>
+      </section>
+
+      <section class="tool-section">
+        <h2 class="tool-section-title">Access breakdown</h2>
+        <p>{frontmatter.accessBreakdown}</p>
+      </section>
+
+      <section class="tool-section tool-section-highlight">
+        <h2 class="tool-section-title">Try this first</h2>
+        <p>{frontmatter.tryThisFirst}</p>
+      </section>
+
+      <div class="tool-cta">
+        <a href={frontmatter.toolLink} target="_blank" rel="noopener noreferrer" class="tool-link-button">
+          Open {frontmatter.title} &rarr;
+        </a>
+      </div>
+
+    </div>
+  </article>
+</BaseLayout>

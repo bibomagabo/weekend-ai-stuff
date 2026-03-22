@@ -6,7 +6,6 @@ type: resource
 complexity: Beginner
 quickWin: "Quick win: Under 30 minutes"
 access: "Free — Google account required"
-layout: ../../layouts/PostLayout.astro
 ---
 
 Start here if you're new to prompting — or if you've been winging it and want a better foundation.

@@ -6,7 +6,6 @@ type: challenge
 complexity: Beginner
 quickWin: "Quick win: Under 15 minutes"
 access: "Free — Google account required"
-layout: ../../layouts/PostLayout.astro
 ---
 
 Think of this like meeting a new officemate. Before they can help you with anything, they need to know a bit about who you are, what you do, and how you like to work. That's exactly what you're doing here, except your new officemate is AI.

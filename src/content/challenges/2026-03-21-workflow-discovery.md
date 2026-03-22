@@ -6,7 +6,6 @@ type: challenge
 complexity: Beginner
 quickWin: "Quick win: Under 30 minutes"
 access: "Free — Google account required"
-layout: ../../layouts/PostLayout.astro
 ---
 
 Last week, you built your Digital Persona — a short document that introduces you to any AI tool. This week, we're putting it to work.
