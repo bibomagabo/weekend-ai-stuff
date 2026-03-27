@@ -26,14 +26,51 @@ function typeLabel(type: string) {
 
   <section class="hero">
     <div class="hero-inner">
-      <h1>Make AI Work <span class="accent">For You</span></h1>
-      <p>
-        A small community of Filipino knowledge workers learning to use AI in their actual jobs.
-        No jargon. No pressure. Just practical prompts you can try this weekend.
-      </p>
-      <a href="/challenges/" class="hero-cta">See the Challenges</a>
+      <div class="hero-text">
+        <h1>Make AI Work <span class="accent">For You</span></h1>
+        <p>
+          A small community of Filipino knowledge workers learning to use AI in their actual jobs.
+          No jargon. No pressure. Just practical prompts you can try this weekend.
+        </p>
+        <a href="/challenges/" class="hero-cta">See the Challenges</a>
+      </div>
+      <div class="hero-visual">
+        {latestChallenges[0] && (
+          <div class="hero-preview-card">
+            <div class="hero-preview-label">Latest Drop</div>
+            <div class="hero-preview-title">{latestChallenges[0].data.title}</div>
+            <div class="hero-preview-meta">
+              <span class={`tag type-${latestChallenges[0].data.type}`}>{typeLabel(latestChallenges[0].data.type)}</span>
+              <span class="tag">Complexity: {latestChallenges[0].data.complexity}</span>
+            </div>
+            <p class="hero-preview-excerpt">{latestChallenges[0].data.description}</p>
+            <a href={`/challenges/${latestChallenges[0].slug}/`} class="hero-preview-link">Try this challenge →</a>
+          </div>
+        )}
+      </div>
     </div>
   </section>
+
+  <div class="stat-bar">
+    <div class="stat-bar-inner">
+      <div>
+        <span class="stat-number">15–30</span>
+        <span class="stat-label">minutes per challenge</span>
+      </div>
+      <div>
+        <span class="stat-number">100%</span>
+        <span class="stat-label">free tools only</span>
+      </div>
+      <div>
+        <span class="stat-number">PH</span>
+        <span class="stat-label">context &amp; examples</span>
+      </div>
+      <div>
+        <span class="stat-number">Weekly</span>
+        <span class="stat-label">new drops</span>
+      </div>
+    </div>
+  </div>
 
   <section class="section">
     <h2 class="section-title">How this works</h2>
@@ -63,7 +100,7 @@ function typeLabel(type: string) {
     <h2 class="section-title">Latest</h2>
     <p class="section-subtitle">The most recent drops from the community.</p>
 
-    <div class="challenge-list">
+    <div class="challenge-grid">
       {latestChallenges.map((challenge) => (
         <a href={`/challenges/${challenge.slug}/`} class="challenge-card">
           <div class="challenge-card-meta">
