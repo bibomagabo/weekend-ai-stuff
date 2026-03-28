@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&display=swap');
 
 :root {
-  --color-bg: #FFFBF5;
-  --color-bg-alt: #FFF6EA;
+  --color-bg: #F5F9FC;
+  --color-bg-alt: #E8F4F2;
   --color-surface: #FFFFFF;
-  --color-text: #2D2A26;
-  --color-text-muted: #6B6560;
-  --color-accent: #D97706;
-  --color-accent-light: #FEF3C7;
-  --color-accent-dark: #92400E;
-  --color-border: #E8E0D6;
-  --color-hero-bg: #1C1917;
-  --color-hero-text: #FFFBF5;
-  --color-hero-accent: #FBBF24;
-  --color-tag-bg: #F5F0EB;
-  --color-tag-text: #78716C;
+  --color-text: #1A2B3D;
+  --color-text-muted: #4A6580;
+  --color-accent: #4ECB71;
+  --color-accent-light: #D1FAE5;
+  --color-accent-dark: #065F46;
+  --color-border: #2DB8A0;
+  --color-hero-bg: #3B7DD8;
+  --color-hero-text: #FFFFFF;
+  --color-hero-accent: #4ECB71;
+  --color-tag-bg: #CCF5EE;
+  --color-tag-text: #0D6B5A;
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -58,8 +58,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--color-hero-bg);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, #4A90D9, #3B7DD8);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   padding: var(--space-sm) var(--space-lg);
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 .nav-links a {
-  color: rgba(255,251,245,0.7);
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -102,7 +102,7 @@ body {
 /* ---- Hero ---- */
 
 .hero {
-  background: var(--color-hero-bg);
+  background: linear-gradient(135deg, #4A90D9 0%, #3B7DD8 100%);
   color: var(--color-hero-text);
   padding: var(--space-3xl) var(--space-lg);
   text-align: center;
@@ -128,7 +128,7 @@ body {
 
 .hero p {
   font-size: 1.1rem;
-  color: rgba(255,251,245,0.75);
+  color: rgba(255,255,255,0.88);
   max-width: 540px;
   margin: 0 auto var(--space-xl);
   line-height: 1.6;
@@ -137,7 +137,7 @@ body {
 .hero-cta {
   display: inline-block;
   background: var(--color-hero-accent);
-  color: var(--color-hero-bg);
+  color: #1A2B3D;
   padding: var(--space-sm) var(--space-xl);
   border-radius: 100px;
   text-decoration: none;
@@ -148,7 +148,7 @@ body {
 
 .hero-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(251,191,36,0.3);
+  box-shadow: 0 4px 16px rgba(78,203,113,0.4);
 }
 
 /* ---- Section ---- */
@@ -222,7 +222,7 @@ body {
 
 .challenge-card:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 2px 12px rgba(217,119,6,0.08);
+  box-shadow: 0 2px 12px rgba(45,184,160,0.15);
 }
 
 .challenge-card-meta {
@@ -361,8 +361,8 @@ body {
 }
 
 .prose pre {
-  background: var(--color-hero-bg);
-  color: var(--color-hero-text);
+  background: #1E3A5F;
+  color: #FFFFFF;
   padding: var(--space-lg);
   border-radius: var(--radius);
   overflow-x: auto;
@@ -424,8 +424,8 @@ body {
 /* ---- Footer ---- */
 
 .footer {
-  background: var(--color-hero-bg);
-  color: rgba(255,251,245,0.6);
+  background: linear-gradient(135deg, #3B7DD8 0%, #2D6EC7 100%);
+  color: rgba(255,255,255,0.7);
   text-align: center;
   padding: var(--space-2xl) var(--space-lg);
   font-size: 0.85rem;
@@ -438,8 +438,8 @@ body {
 
 /* ---- Toolkit: Tag Colors ---- */
 
-.tag-category { background: #F0FDF4; color: #166534; }
-.ease-beginner { background: #ECFDF5; color: #065F46; }
+.tag-category { background: #CCF5EE; color: #065F46; }
+.ease-beginner { background: #D1FAE5; color: #065F46; }
 .ease-moderate { background: #FEF3C7; color: #92400E; }
 .ease-advanced { background: #FEE2E2; color: #991B1B; }
 
@@ -554,7 +554,7 @@ body {
 
 .tool-link-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(217,119,6,0.2);
+  box-shadow: 0 4px 16px rgba(78,203,113,0.35);
 }
 
 /* ---- Responsive ---- */
